@@ -1,0 +1,1 @@
+dotfiles for openSUSE+Sway

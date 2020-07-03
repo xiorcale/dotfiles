@@ -205,4 +205,4 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-include /etc/sway/config.d/*
+include /home/xiorcale/.config/sway/config.d/*

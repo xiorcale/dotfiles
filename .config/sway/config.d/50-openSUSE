@@ -4,8 +4,8 @@
 # in your local config file
 
 # wofi as application launcher
-# set $menu wofi --conf=/etc/wofi/config --style=/etc/wofi/style.css
-set $menu wofi --conf=/home/xiorcale/.config/wofi/config --style=/home/xiorcale/.config/wofi/style.css
+set $menu wofi --allow-images --conf=/home/xiorcale/.config/wofi/config --style=/home/xiorcale/.config/wofi/style.css
+
 
 # openSUSE wallpaper
 output * bg /usr/share/wallpapers/default-1920x1080.jpg fill
