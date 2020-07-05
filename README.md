@@ -1,1 +1,3 @@
-dotfiles for openSUSE+Sway
+# dotfiles
+
+dotfiles for Sway

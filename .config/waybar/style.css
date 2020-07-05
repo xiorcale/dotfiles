@@ -1,8 +1,8 @@
 * {
     border:        none;
     border-radius: 0;
-    font-family:   "Source Sans Pro";
-    font-size:     18px;
+    font-family:   "Font Awesome 5 Free";
+    font-size:     13px;
     box-shadow:    none;
     text-shadow:   none;
     transition-duration: 0s;
@@ -54,7 +54,6 @@ window#waybar.chromium {
 }
 
 #workspaces button.focused {
-    background-color: #7c6f64;
     border-bottom: 3px solid #ebdbb2;
 }
 
