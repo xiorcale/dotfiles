@@ -1,8 +1,8 @@
-"let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1
 
-"call deoplete#custom#option('source', {
-"\   '_': ['ale'],
-"\})
+call deoplete#custom#option('source', {
+\   '_': ['ale'],
+\})
 
 let g:ale_completion_enabled = 1
 
@@ -29,13 +29,15 @@ nmap <silent> <F2> <Plug>(ale_rename)
 
 " linter (lsp)
 let g:ale_linters = {
-    \ 'python': ['falke8', 'pylint', 'pyls']
+    \ 'python': ['falke8', 'pylint', 'pyls'],
+    \ 'rust': ['rls']
     \ }
 
 " fixers
 let g:ale_fixers = {
     \ 'cpp': ['clang-format'],
-    \ 'python': ['autopep8']
+    \ 'python': ['autopep8'],
+    \ 'rust': ['rustfmt']
     \ }
 
 

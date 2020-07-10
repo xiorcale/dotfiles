@@ -17,6 +17,13 @@ call plug#begin('~/.config/nvim/plugged')
 
 " IDE like packages
 Plug 'dense-analysis/ale'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+Plug 'shougo/deoplete.nvim'
+Plug 'shougo/echodoc.vim'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -25,6 +32,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 
 " languages support
+Plug 'rust-lang/rust.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
 Plug 'lnl7/vim-nix'
@@ -42,7 +50,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 
-"
 " Should be loaded as the very last one
 Plug 'ryanoasis/vim-devicons'
 
