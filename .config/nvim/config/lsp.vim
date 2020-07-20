@@ -19,7 +19,6 @@ let g:LanguageClient_serverCommands = {
         \ '/run/current-system/sw/bin/tsserver'
         \ ],
     \ 'python': ['pyls'],
-    \ 'rust': ['rls'],
     \ 'tf': ['terraform-lsp'],
     \ }
 
