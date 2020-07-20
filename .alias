@@ -1,3 +1,0 @@
-alias dotfiles='/usr/bin/git --git-dir=$HOME/Dotfiles --work-tree=$HOME'
-alias ls="ls --color=always"
-alias vim=nvim

@@ -63,8 +63,10 @@ nnoremap <M-g> :G<Enter>
 nnoremap <M-n> :LuaTreeToggle<CR>
 nnoremap <leader>r :LuaTreeRefresh<CR>
 
+let g:lua_tree_auto_close = 1
+let g:lua_tree_follow = 1
+
 let g:AutoPairsShortcutToggle = ''
 let g:AutoPairsShortcutFastWrap = ''
 let g:AutoPairsShortcutJump = ''
 let g:AutoPairsShortcutBackInsert = ''
-

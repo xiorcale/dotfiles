@@ -4,7 +4,6 @@
 
 set autoindent
 set cmdheight=2
-set cot+=preview
 set encoding=utf-8
 set expandtab
 set foldlevel=99
@@ -38,5 +37,4 @@ autocmd CompleteDone * silent! pclose
 
 " use ripgrep with Find
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
-
 

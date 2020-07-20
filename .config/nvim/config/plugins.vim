@@ -16,14 +16,12 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 " IDE like packages
-Plug 'dense-analysis/ale'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/echodoc.vim'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
-
-Plug 'shougo/deoplete.nvim'
-Plug 'shougo/echodoc.vim'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -32,8 +30,9 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 
 " languages support
-Plug 'rust-lang/rust.vim'
+Plug 'andys8/vim-elm-syntax'
 Plug 'pangloss/vim-javascript'
+Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'lnl7/vim-nix'
 
@@ -46,10 +45,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " ui
-"Plug 'kyazdani42/nvim-tree.lua'
+Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 
+"
 " Should be loaded as the very last one
 Plug 'ryanoasis/vim-devicons'
 
