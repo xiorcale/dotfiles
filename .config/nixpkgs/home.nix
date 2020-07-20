@@ -158,14 +158,17 @@ in
       };
 
       keybindings = let
-        modifier = config.wayland.windowManager.sway.config.modifier;
+        brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
+        pactl = "${pkgs.pulseaudio}/bin/pactl";
+        wob-update = "$HOME/.config/sway/scripts/wobWrapper.sh --update";
+        wob-toggle = "$HOME/.config/sway/scripts/wobWrapper.sh --toggle";
       in lib.mkOptionDefault {
-        "XF86AudioRaiseVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%";
-        "XF86AudioLowerVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%";
-        "XF86AudioMute" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle";
-        "XF86AudioMicMute" = "exec ${pkgs.pulseaudio}/bin/pactl set-source-mute @DEFAULT_SOURCE@ toggle";
-        "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
-        "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set +5%";
+        "XF86AudioRaiseVolume" = "exec ${pactl} set-sink-volume @DEFAULT_SINK@ +5% && ${wob-update}";
+        "XF86AudioLowerVolume" = "exec ${pactl} set-sink-volume @DEFAULT_SINK@ -5% && ${wob-update}";
+        "XF86AudioMute" = "exec ${pactl} set-sink-mute @DEFAULT_SINK@ toggle && ${wob-toggle}";
+        "XF86AudioMicMute" = "exec ${pactl} set-source-mute @DEFAULT_SOURCE@ toggle";
+        "XF86MonBrightnessDown" = "exec ${brightnessctl} set 5%-";
+        "XF86MonBrightnessUp" = "exec ${brightnessctl} set +5%";
       };
 
       menu = "${pkgs.wofi}/bin/wofi --allow-images --conf=/home/xiorcale/.config/wofi/config --style=/home/xiorcale/.config/wofi/style.css";
@@ -211,6 +214,7 @@ in
     swayidle
     swaylock
     waybar-pulse
+    wob
     wofi
   ];
 
