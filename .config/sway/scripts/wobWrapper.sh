@@ -12,6 +12,18 @@ is_running_on_this_screen() {
     return 1
 }
 
+show() {
+    stat=$(amixer sget Master | rg 'Right:' | awk -F'[][]' '{ print $4 }')
+    if [[ $stat == "off" ]]; then
+        echo 0 > $wob_pipe
+    else
+        vol=$(amixer sget Master | rg 'Right:' | awk -F'[][]' '{ print $2 }')
+        vol=${vol::-1}
+        echo $vol > $wob_pipe
+    fi
+}
+
+# setup
 wob_pipe=~/.cache/$( basename $SWAYSOCK ).wob
 
 [[ -p $wob_pipe ]] || mkfifo $wob_pipe
@@ -21,18 +33,5 @@ is_running_on_this_screen wob || {
     tail -f $wob_pipe | wob &
 }
 
-
-vol=$(amixer sget Master | rg 'Right:' | awk -F'[][]' '{ print $2 }')
-vol=${vol::-1}
-stat=$(amixer sget Master | rg 'Right:' | awk -F'[][]' '{ print $4 }')
-
-if [[ $1 == "--update" ]]; then
-    echo $vol > $wob_pipe
-fi
-
-if [[ $1 == "--toggle" ]] && [[ $stat == "off" ]]; then
-        echo 0 > $wob_pipe
-else
-    echo $vol > $wob_pipe
-fi
+show
 

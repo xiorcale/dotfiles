@@ -106,8 +106,8 @@ in
     redshift = {
       enable = true;
       package = pkgs.redshift-wlr;
-      latitude = "46.99";
-      longitude = "6.93";
+      latitude = "46.9";
+      longitude = "6.9";
     };
   };
 
@@ -160,12 +160,11 @@ in
       keybindings = let
         brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
         pactl = "${pkgs.pulseaudio}/bin/pactl";
-        wob-update = "$HOME/.config/sway/scripts/wobWrapper.sh --update";
-        wob-toggle = "$HOME/.config/sway/scripts/wobWrapper.sh --toggle";
+        wob-wrapper = "$HOME/.config/sway/scripts/wobWrapper.sh";
       in lib.mkOptionDefault {
-        "XF86AudioRaiseVolume" = "exec ${pactl} set-sink-volume @DEFAULT_SINK@ +5% && ${wob-update}";
-        "XF86AudioLowerVolume" = "exec ${pactl} set-sink-volume @DEFAULT_SINK@ -5% && ${wob-update}";
-        "XF86AudioMute" = "exec ${pactl} set-sink-mute @DEFAULT_SINK@ toggle && ${wob-toggle}";
+        "XF86AudioRaiseVolume" = "exec ${pactl} set-sink-volume @DEFAULT_SINK@ +5% && ${wob-wrapper}";
+        "XF86AudioLowerVolume" = "exec ${pactl} set-sink-volume @DEFAULT_SINK@ -5% && ${wob-wrapper}";
+        "XF86AudioMute" = "exec ${pactl} set-sink-mute @DEFAULT_SINK@ toggle && ${wob-wrapper}";
         "XF86AudioMicMute" = "exec ${pactl} set-source-mute @DEFAULT_SOURCE@ toggle";
         "XF86MonBrightnessDown" = "exec ${brightnessctl} set 5%-";
         "XF86MonBrightnessUp" = "exec ${brightnessctl} set +5%";
@@ -210,6 +209,7 @@ in
     gnome3.adwaita-icon-theme
     pavucontrol
     qt5.qtwayland
+    redshift-wlr
     swaybg
     swayidle
     swaylock
