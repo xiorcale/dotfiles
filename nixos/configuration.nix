@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./gnome.nix
       ./packages.nix
       ./printer.nix
     ];
@@ -34,7 +35,7 @@
       wlp7s0.useDHCP = true;
     };
 
-    firewall.allowedTCPPorts = [ 139 445 ]; # samba, windows share
+    firewall.allowedTCPPorts = [ 139 445 5000 ]; # samba
   };
 
   time.timeZone = "Europe/Zurich";
@@ -45,6 +46,10 @@
 
   hardware = {
     bluetooth.enable = true;
+
+    #nvidia.prime.sync.enable = true;
+    #nvidia.prime.nvidiaBusId = "PCI:1:0:0";
+    #nvidia.prime.intelBusId = "PCI:0:2:0";
 
     opengl.driSupport = true;
 
@@ -64,13 +69,21 @@
 
     flatpak.enable = true;
 
+    geoclue2.enable = true;
+
     samba.enable = true;
 
     xserver = {
-      enable = false;
+      enable = true;
       layout = "ch";
       xkbOptions = "eurosign:e";
       xkbVariant = "fr";
+
+      libinput.enable = true; # enable trackpad
+
+      #displayManager.lightdm.enable = true;
+
+      #videoDrivers = [ "nvidia" ];
     };
   };
 
@@ -95,9 +108,7 @@
       EDITOR = "nvim";
     };
   };
-
-  # without this, home-manager seems to have trouble to start sway...
-  programs.sway.enable = true;
+  #programs.sway.enable = true;
 
   xdg.portal.enable = true;
 
