@@ -1,0 +1,81 @@
+{
+    "app_config": {
+        "audio_config": {
+            "audio": "pipewire"
+        }
+    },
+    "archinstall-language": "English",
+    "auth_config": null,
+    "bootloader": "Systemd-boot",
+    "custom_commands": [],
+    "hostname": "archlinux",
+    "kernels": [
+        "linux"
+    ],
+    "locale_config": {
+        "kb_layout": "fr_CH",
+        "sys_enc": "UTF-8",
+        "sys_lang": "en_US.UTF-8"
+    },
+    "mirror_config": {
+        "custom_repositories": [],
+        "custom_servers": [],
+        "mirror_regions": {
+            "Spain": [
+                "https://ftp.rediris.es/mirror/archlinux/$repo/os/$arch",
+                "http://es.mirrors.cicku.me/archlinux/$repo/os/$arch",
+                "https://es.mirrors.cicku.me/archlinux/$repo/os/$arch",
+                "https://nox.panibrez.com/archlinux/$repo/os/$arch",
+                "http://mirror.raiolanetworks.com/archlinux/$repo/os/$arch",
+                "https://mirror.raiolanetworks.com/archlinux/$repo/os/$arch",
+                "http://mirror.es.cdn-perfprod.com/archlinux/$repo/os/$arch",
+                "https://mirror.es.cdn-perfprod.com/archlinux/$repo/os/$arch"
+            ]
+        },
+        "optional_repositories": []
+    },
+    "network_config": {
+        "type": "nm"
+    },
+    "ntp": true,
+    "packages": [
+        "bat",
+        "code",
+        "git",
+        "helix",
+        "intellij-idea-community-edition",
+        "podman",
+        "podman-compose",
+
+        "noto-fonts",
+        "noto-fonts-cjk",
+        "noto-fonts-emoki",
+        "noto-fonts-extra",
+        "ttf-liberation",
+        "ttf-dejavu",
+        "ttf-roboto",
+        "ttf-jetbrains-mono",
+        
+        "nvidia",
+        "nvidia-prime"
+    ],
+    "parallel_downloads": 0,
+    "profile_config": {
+        "gfx_driver": "All open-source",
+        "greeter": "gdm",
+        "profile": {
+            "custom_settings": {
+                "GNOME": {}
+            },
+            "details": [
+                "GNOME"
+            ],
+            "main": "Desktop"
+        }
+    },
+    "script": null,
+    "services": [],
+    "swap": true,
+    "timezone": "Europe/Madrid",
+    "version": "3.0.11"
+}
