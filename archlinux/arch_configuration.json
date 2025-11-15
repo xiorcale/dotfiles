@@ -46,20 +46,18 @@
         "git",
         "helix",
         "intellij-idea-community-edition",
-        "podman",
-        "podman-compose",
-
         "noto-fonts",
         "noto-fonts-cjk",
         "noto-fonts-emoki",
         "noto-fonts-extra",
-        "ttf-liberation",
-        "ttf-dejavu",
-        "ttf-roboto",
-        "ttf-jetbrains-mono",
-        
         "nvidia",
-        "nvidia-prime"
+        "nvidia-prime",
+        "podman",
+        "podman-compose",
+        "ttf-dejavu",
+        "ttf-jetbrains-mono",
+        "ttf-liberation",
+        "ttf-roboto"
     ],
     "parallel_downloads": 0,
     "profile_config": {
