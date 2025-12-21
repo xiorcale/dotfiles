@@ -11,4 +11,4 @@ yay -Syu --devel
 yay -Y --devel --save
 
 # nvidia driver
-yay nvidia-580xx-dkms
+yay linux-headers nvidia-580xx-dkms
