@@ -43,8 +43,10 @@
     "packages": [
         "bat",
         "code",
+        "firefox",
         "git",
         "helix",
+        "less",
         "noto-fonts",
         "noto-fonts-cjk",
         "noto-fonts-emoki",
